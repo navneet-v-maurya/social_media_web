@@ -1,0 +1,18 @@
+.auth {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .auth {
+    grid-template-columns: 1fr;
+  }
+  .auth > :nth-child(1) {
+    display: none;
+  }
+  .auth > :nth-child(2) {
+    width: 100%;
+  }
+}
