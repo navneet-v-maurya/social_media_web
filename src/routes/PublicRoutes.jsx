@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 const Auth = lazy(() => import("../components/screens/auth/Auth"));
