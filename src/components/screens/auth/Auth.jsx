@@ -5,14 +5,17 @@ import "../../../styles/Auth.css";
 const SigniIn = lazy(() => import("./Signin"));
 const Register = lazy(() => import("./Register"));
 
-function Auth() {
+const Auth = () => {
   return (
-    <Routes>
-      <Route path="signin" element={<SigniIn />} />
-      <Route path="register" element={<Register />} />
-      <Route path="*" element={<Navigate to="/auth/signin" />} />
-    </Routes>
+    <div className="auth">
+      <div>Logo</div>
+      <Routes>
+        <Route path="signin" element={<SigniIn />} />
+        <Route path="register" element={<Register />} />
+        <Route path="*" element={<Navigate to="/auth/signin" />} />
+      </Routes>
+    </div>
   );
-}
+};
 
 export default Auth;

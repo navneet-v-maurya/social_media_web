@@ -1,0 +1,21 @@
+.chat-route {
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+}
+
+.inbox {
+  background-color: yellow;
+}
+
+.chat-box {
+  background-color: blue;
+}
+
+@media (max-width: 767px) {
+  .chat-route {
+    grid-template-columns: 1fr;
+  }
+  .chat-route > :nth-child(2) {
+    display: none;
+  }
+}

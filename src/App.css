@@ -1,34 +1,66 @@
-p {
+body {
+  overflow: hidden;
   margin: 0;
-  padding: 0;
+  padding: 0.2rem;
 }
 
-.flex-vertical-container {
+.main {
+  display: grid;
+  position: relative;
+  height: 100vh;
+}
+
+.left-side-bar {
+  background-color: red;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.flex-horizontal-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.input {
-  border: none;
-  padding: 1rem;
-  font-size: 16px;
-  background-color: rgb(197, 195, 195);
-  border-radius: 0.5rem;
-  outline: none;
+.bottom-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  bottom: 0;
+  background-color: gray;
+  width: 100%;
 }
 
 .button {
   background-color: orange;
-  color: white;
-  border-radius: 0.5rem;
   border: none;
-  padding: 1rem 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
+  padding: 0.8rem 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .main {
+    grid-template-rows: 1fr;
+  }
+  .left-side-bar {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1114px) {
+  .main {
+    grid-template-columns: 1.5fr 6fr;
+    gap: 1rem;
+  }
+  .bottom-bar {
+    display: none;
+  }
+}
+
+@media (min-width: 1115px) {
+  .main {
+    grid-template-columns: 1.5fr 6fr;
+    gap: 1rem;
+  }
+  .bottom-bar {
+    display: none;
+  }
 }
