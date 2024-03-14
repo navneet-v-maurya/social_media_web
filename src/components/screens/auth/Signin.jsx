@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Signup() {
+const Signin = () => {
   const navigate = useNavigate();
 
   const initial_user_details = {
@@ -25,45 +25,43 @@ function Signup() {
   };
 
   return (
-    <div className="auth">
-      <div>Logo</div>
-      <form className="flex-vertical-container" onSubmit={handle_submit}>
-        <input
-          className="input"
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={user_details.email}
-          onChange={handle_input_change}
-        />
+    <form className="auth-form" onSubmit={handle_submit}>
+      <input
+        className="input"
+        type="email"
+        placeholder="Email"
+        name="email"
+        value={user_details.email}
+        onChange={handle_input_change}
+      />
 
-        <input
-          className="input"
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={user_details.password}
-          onChange={handle_input_change}
-        />
-
+      <input
+        className="input"
+        type="password"
+        placeholder="Password"
+        name="password"
+        value={user_details.password}
+        onChange={handle_input_change}
+      />
+      <div className="buttons">
         <button className="button" type="submit">
           Login
         </button>
         <button className="button" type="button" onClick={handle_reset}>
           Reset
         </button>
-        <p style={{ textDecoration: "underline", fontSize: "20px" }}>
-          Dont&apos;t have an Account&nbsp;
-          <span
-            onClick={() => navigate("/auth/register")}
-            style={{ color: "blue", cursor: "pointer", fontWeight: "bold" }}
-          >
-            Register
-          </span>
-        </p>
-      </form>
-    </div>
+      </div>
+      <p style={{ textDecoration: "underline", fontSize: "20px" }}>
+        Dont&apos;t have an Account&nbsp;
+        <span
+          onClick={() => navigate("/auth/register")}
+          style={{ color: "blue", cursor: "pointer", fontWeight: "bold" }}
+        >
+          Register
+        </span>
+      </p>
+    </form>
   );
-}
+};
 
-export default Signup;
+export default Signin;
