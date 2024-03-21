@@ -8,7 +8,7 @@ function Body() {
       <TopBar />
       <div className="body">
         <div>stories</div>
-        <div>posts</div>
+        <div>postss</div>
       </div>
     </div>
   );

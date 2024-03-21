@@ -80,6 +80,7 @@ function Register() {
         <input
           className="input"
           type="password"
+          style={{ width: "70%" }}
           placeholder="Password"
           name="password"
           value={user_details.password}
@@ -88,6 +89,7 @@ function Register() {
         <input
           className="input"
           type="password"
+          style={{ width: "70%" }}
           name="confirm_password"
           placeholder="Confirm Password"
           value={user_details.confirm_password}
