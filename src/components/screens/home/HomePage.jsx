@@ -6,12 +6,12 @@ import "../../../styles/Home.css";
 
 //component imports
 const RightSideBar = lazy(() => import("../../common/RightSideBar"));
-const Body = lazy(() => import("../../common/Body"));
+const PostsContainer = lazy(() => import("../../common/PostsContainer"));
 
 const HomePage = () => {
   return (
     <div className="home">
-      <Body />
+      <PostsContainer />
       <RightSideBar />
     </div>
   );

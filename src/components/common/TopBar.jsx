@@ -1,4 +1,4 @@
-function TopBar() {
+const TopBar = () => {
   return (
     <div className="top-bar">
       <div>Logo</div>
@@ -6,6 +6,6 @@ function TopBar() {
       <div>Notification</div>
     </div>
   );
-}
+};
 
 export default TopBar;

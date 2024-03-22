@@ -1,6 +1,8 @@
+//module imports
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
+//component imports
 const HomePage = lazy(() => import("../components/screens/home/HomePage"));
 const ChatPage = lazy(() => import("../components/screens/chat/ChatPage"));
 const ProfilePage = lazy(() =>
@@ -9,7 +11,7 @@ const ProfilePage = lazy(() =>
 const LeftSideBar = lazy(() => import("../components/common/LeftSideBar"));
 const BottomBar = lazy(() => import("../components/common/BottomBar"));
 
-function PrivateRoutes() {
+const PrivateRoutes = () => {
   return (
     <div className="main">
       <LeftSideBar />
@@ -22,6 +24,6 @@ function PrivateRoutes() {
       <BottomBar />
     </div>
   );
-}
+};
 
 export default PrivateRoutes;

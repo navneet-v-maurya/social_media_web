@@ -1,7 +1,8 @@
+//module imports
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Register() {
+const Register = () => {
   const navigate = useNavigate();
 
   const initial_user_details = {
@@ -117,6 +118,6 @@ function Register() {
       </p>
     </form>
   );
-}
+};
 
 export default Register;
