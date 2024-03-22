@@ -1,8 +1,15 @@
+//module imports
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+//component imports
+import Auth from "../../../apis/auth";
+import { loading, success, error } from "../../../redux/authReducer";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const initial_user_details = {
     email: "",
@@ -17,7 +24,14 @@ const Signin = () => {
 
   const handle_submit = (e) => {
     e.preventDefault();
-    console.log(user_details);
+    dispatch(loading());
+    Auth.login(user_details).then((res) => {
+      if (res.status === 200) {
+        dispatch(success(res?.data?.data));
+      } else {
+        dispatch(error());
+      }
+    });
   };
 
   const handle_reset = () => {

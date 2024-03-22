@@ -9,7 +9,7 @@ import "../../../styles/Chat.css";
 const ChatBox = lazy(() => import("./ChatBox"));
 const Inbox = lazy(() => import("./Inbox"));
 
-const ChatRoute = () => {
+const ChatPage = () => {
   return (
     <div className="chat-route">
       <Routes>
@@ -22,4 +22,4 @@ const ChatRoute = () => {
   );
 };
 
-export default ChatRoute;
+export default ChatPage;

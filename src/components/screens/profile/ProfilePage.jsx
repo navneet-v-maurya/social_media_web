@@ -6,7 +6,7 @@ import "../../../styles/Home.css";
 
 //component imports
 const RightSideBar = lazy(() => import("../../common/RightSideBar"));
-const Body = lazy(() => import("../../common/Body"));
+const Body = lazy(() => import("../../common/PostsContainer"));
 
 const ProfilePage = () => {
   return (

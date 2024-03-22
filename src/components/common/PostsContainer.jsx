@@ -1,8 +1,10 @@
+//module imports
 import { lazy } from "react";
 
+//component imports
 const TopBar = lazy(() => import("./TopBar"));
 
-function Body() {
+const PostsContainer = () => {
   return (
     <div className="middle">
       <TopBar />
@@ -12,6 +14,6 @@ function Body() {
       </div>
     </div>
   );
-}
+};
 
-export default Body;
+export default PostsContainer;

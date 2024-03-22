@@ -1,16 +1,18 @@
+//module imports
 import axios from "axios";
-import default_catch from "../utils/Error";
+
+//component imports
+import default_catch from "../utils/error";
 
 const instance = axios.create({
   baseURL: "http://localhost:3000/auth",
-  timeout: 1000,
 });
 
 class Auth {
   static login(payload) {
     return new Promise((resolve) => {
       instance
-        .post("/login", payload)
+        .post("/sign_in", payload)
         .then((res) => {
           resolve(res);
         })

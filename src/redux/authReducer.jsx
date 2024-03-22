@@ -1,8 +1,12 @@
+//module imports
 import { createSlice } from "@reduxjs/toolkit";
 
+const local_data = localStorage.getItem("user");
+const user = local_data ? JSON.parse(local_data) : null;
+
 const initial_state = {
-  user: null,
-  logged_in: false,
+  user: user ? user : null,
+  logged_in: user ? true : false,
   loading: false,
   error: null,
 };
@@ -14,20 +18,28 @@ export const auth_slice = createSlice({
     loading: (state) => {
       state.user = null;
       state.logged_in = false;
-      state.error = false;
+      state.error = null;
       state.loading = true;
     },
     success: (state, action) => {
-      state.user = action.user;
+      state.user = action.payload;
       state.logged_in = true;
-      state.error = false;
+      state.error = null;
       state.loading = false;
+      localStorage.setItem("user", JSON.stringify(state.user));
     },
-    error: (state) => {
+    error: (state, action) => {
       state.user = null;
       state.logged_in = false;
-      state.error = true;
+      state.error = action.payload;
       state.loading = false;
+    },
+    logout: (state) => {
+      state.user = null;
+      state.logged_in = false;
+      state.error = null;
+      state.loading = false;
+      localStorage.clear();
     },
   },
 });
