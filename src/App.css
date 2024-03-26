@@ -2,6 +2,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0.2rem;
+  background-color: #ffffec;
 }
 
 .main {
@@ -27,13 +28,18 @@ body {
 }
 
 .button {
-  background-color: orange;
+  background-color: #243763;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
   padding: 0.8rem 1rem;
   color: white;
   font-weight: bold;
+  transition: background-color 0.5s linear;
+}
+
+.button:hover {
+  background-color: #c6a969;
 }
 
 @media (max-width: 767px) {

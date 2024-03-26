@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 //component imports
 import Auth from "../../../apis/auth";
@@ -25,13 +26,20 @@ const Signin = () => {
   const handle_submit = (e) => {
     e.preventDefault();
     dispatch(loading());
-    Auth.login(user_details).then((res) => {
-      if (res.status === 200) {
-        dispatch(success(res?.data?.data));
-      } else {
+    Auth.login(user_details)
+      .then((res) => {
+        if (res.status === 200) {
+          dispatch(success(res?.data?.data));
+        } else {
+          dispatch(error());
+          toast.error(res.data.message);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
         dispatch(error());
-      }
-    });
+        toast.error("Something went Wrong!");
+      });
   };
 
   const handle_reset = () => {
